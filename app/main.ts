@@ -17,7 +17,7 @@ const server = net.createServer((socket: any) => {
 			socket.write("HTTP/1.1 200 OK\r\n");
 		} else if (path === `/echo/${query}`) {
 			socket.write(
-				`HTTP/1.1 200 OK\r\n Content-Type: text/plain\r\n Content-Length: ${query.length}\r\n\r\n ${query}`
+				`HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: ${query.length}\r\n\r\n ${query}`
 			);
 		} else {
 			socket.write("HTTP/1.1 404 Not Found\r\n\r\n");
